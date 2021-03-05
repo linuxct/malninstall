@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FluBot Malware deinstallierer</string>
+    <string name="showSetAsLauncher_text">Tippen Sie auf die Taste, um diese Anwendung als Startprogramm festzulegen. Diese Aktion wird nachher rückgängig gemacht</string>
+    <string name="showSetAsLauncher_button">Startprogramm andern"</string>
+
+    <string name="showBeginUninstall_text">Beachten Sie, dass WeChat möglicherweise entfernt wird, wenn Sie es installiert haben</string>
+    <string name="showBeginUninstall_button">Entferne Malware</string>
+
+    <string name="showRemoveDefaultLauncher_text">Tippen Sie auf die Taste, um ihrer Standard Startprogramm festzulegen. Wahlen Sie nicht FluBot Malware Uninstall.</string>
+    <string name="showRemoveDefaultLauncher_button">Startprogramm andern"</string>
+
+    <string name="showNotFound_text">Auf Ihrem Gerät wurde keine bekannte FluBot-Malware-Anwendung gefunden</string>
+    <string name="showNotFound_button">Malware nicht gefunden</string>
+
+    <string name="error_text">Etwas ist schiefgelaufen</string>
+    <string name="success_text">Malware entfernt</string>
+</resources>
