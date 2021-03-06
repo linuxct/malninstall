@@ -2,9 +2,17 @@
 
 A tool to remove FluBot from any Android 6.0+ device.
 
-<img src="https://raw.githubusercontent.com/linuxct/malninstall/main/app/src/main/ic_launcher-playstore.png" alt="icon" width="150"/>
-
-<video src="https://raw.githubusercontent.com/linuxct/malninstall/assets/record.mp4" controls></video>
+<p align="center" width="100%">
+  <img src="https://media.giphy.com/media/56mJEwS5wvZIvfnXl1/giphy.gif" alt="Ever found this?"></img><br/>
+  Did you unknowingly install FluBot? <br/>
+  This application is able to prevent the user from removing it.
+</p>
+<br/>
+<p align="center" width="100%">
+  <img src="https://media.giphy.com/media/iu4zn6PFemkFSbFtIQ/giphy.gif" alt="Don't worry, here's malninstall!"></img><br/>
+  Don't worry! You can use malninstall (the FluBot Malware Remover) <br/>
+  to stop this malicious software from stealing your banking details.
+</p>
 
 
 ## Usage
