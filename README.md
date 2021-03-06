@@ -4,6 +4,10 @@ A tool to remove FluBot from any Android 6.0+ device.
 
 <img src="https://raw.githubusercontent.com/linuxct/malninstall/main/app/src/main/ic_launcher-playstore.png" alt="icon" width="150"/>
 
+<video src="https://user-images.githubusercontent.com/3966313/110190277-cf7d1100-7e22-11eb-8d95-89278327d01c.mp4" style="display:block; width:100%; height:auto;" autoplay controls loop="loop">
+ </video>
+
+
 ## Usage
 
 This tool relies on setting itself as your default application launcher in a temporary way.  
