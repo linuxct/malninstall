@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">FluBot Malware Uninstall</string>
-    <string name="showSetAsLauncher_text">Please tap on the button to set this \ntool as your default launcher. If asked again, choose "Always".\nThis step will be undone after the \nremoval of the malware</string>
+    <string name="showSetAsLauncher_text">Please tap on the button to set this tool as \nyour default launcher. If asked repeatedly, choose "Always".\nThis step will be undone after the \nremoval of the malware</string>
     <string name="showSetAsLauncher_button">Set as launcher</string>
 
-    <string name="showBeginUninstall_text">Please take into account this may remove \nWeChat if you had it previously installed</string>
+    <string name="showBeginUninstall_text">Please take into account this may remove \nWeChat if you had it previously installed. \nIf you are asked to choose a launcher\n, choose "Always" option for FluBot Malware Uninstall. \nIgnore the error messages and proceed to \nuninstall the malware by tapping on "OK" when requested.</string>
     <string name="showBeginUninstall_button">Uninstall malware</string>
 
     <string name="showRemoveDefaultLauncher_text">Please tap on the button to choose \nback your default application launcher.\nDo not choose FluBot Malware Uninstall.</string>

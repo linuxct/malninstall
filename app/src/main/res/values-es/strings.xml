@@ -4,10 +4,10 @@
     <string name="showSetAsLauncher_text">Por favor, haz click en el boton para establecer \nesta herramienta como tu lanzador de aplicaciones. Si durante la desinstalacion te pregunta de nuevo, escoge "Siempre".\nEste paso será deshecho tras \nrdesinstalar el malware</string>
     <string name="showSetAsLauncher_button">Establecer como lanzador de aplicaciones</string>
 
-    <string name="showBeginUninstall_text">Por favor ten en cuenta que esto puede desinstalar \nWeChat si lo tenias previamente instalado</string>
+    <string name="showBeginUninstall_text">Por favor ten en cuenta que esto puede desinstalar \nWeChat si lo tenias previamente instalado.\nSi te aparece la seleccion de lanzador de aplicaciones de nuevo, \nhaz click sobre el boton de "Siempre" que aparece \ndebajo de Desinstalar FluBot malware. \nIgnora los mensajes de error y procede a \ndesinstalar el malware haciendo click en OK cuando el sistema lo pregunte.</string>
     <string name="showBeginUninstall_button">Desinstalar malware</string>
 
-    <string name="showRemoveDefaultLauncher_text">Por favor haz click en el boton para \nestablecer de vuelta tu lanzador de aplicaciones.\nNo escojas Desinstalar FluBot Malware.</string>
+    <string name="showRemoveDefaultLauncher_text">Por favor haz click en el boton para \nestablecer de vuelta tu lanzador de aplicaciones.\nAhora no escojas Desinstalar FluBot Malware.</string>
     <string name="showRemoveDefaultLauncher_button">Elige tu lanzador de aplicaciones habitual</string>
 
     <string name="showNotFound_text">No se ha encontrado ninguna aplicacion \nrelacionada con FluBot en tu dispositivo</string>
