@@ -1,4 +1,4 @@
-# malninstall (a.k.a. FluBot Malware Remover)<br/><br/> [![Latest Version](https://img.shields.io/github/v/release/linuxct/malninstall)](https://github.com/linuxct/malninstall/releases/latest) ![Compatibility](https://img.shields.io/badge/compat-API%2023%2B-brightgreen)
+# malninstall (a.k.a. FluBot Malware Remover)<br/> [![Latest Version](https://img.shields.io/github/v/release/linuxct/malninstall)](https://github.com/linuxct/malninstall/releases/latest) ![Compatibility](https://img.shields.io/badge/compat-API%2023%2B-brightgreen)
 
 A tool to remove FluBot from any Android 6.0+ device.
 
