@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -144,10 +145,31 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun chooseLauncher(){
+        if (deviceIsBlacklisted()){
+            val handled = chooseLauncherFallback()
+            if (handled) return
+        }
+
         val selector = Intent(Intent.ACTION_MAIN)
         selector.addCategory(Intent.CATEGORY_HOME)
         selector.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(selector)
+    }
+
+    private fun chooseLauncherFallback(): Boolean {
+        var handled: Boolean
+        try {
+            packageManager.getPackageInfo("com.google.android.permissioncontroller", 0)
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.setClassName("com.google.android.permissioncontroller", "com.android.packageinstaller.role.ui.HomeSettingsActivity")
+            handled = true
+            startActivity(intent)
+        }
+        catch (e: Exception){
+            handled = false
+        }
+
+        return handled
     }
 
     private fun isLauncherDefault(): Boolean {
@@ -180,6 +202,16 @@ class MainActivity : AppCompatActivity() {
         return currentLauncherName == packageName
     }
 
+    private fun deviceIsBlacklisted(): Boolean {
+        for (device in blacklist){
+            if (device == manufacturer){
+                return true
+            }
+        }
+
+        return false
+    }
+
     private fun packageListMatchInDevice(packNameList: List<String>): List<String>{
         val pm = packageManager
         foundPackages = mutableListOf()
@@ -207,4 +239,10 @@ class MainActivity : AppCompatActivity() {
             reqCodeInc = reqCodeInc++
         }
     }
+
+    private companion object DeviceData {
+        val manufacturer = Build.MANUFACTURER.toString().toLowerCase()
+        val blacklist = listOf("huawei", "honor", "vivo", "iqoo" )
+    }
 }
+
