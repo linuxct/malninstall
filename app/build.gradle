@@ -11,8 +11,8 @@ android {
         applicationId "space.linuxct.malninstall"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 202103063
-        versionName "2021-03-06-3"
+        versionCode 20210318
+        versionName "2021-03-18"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

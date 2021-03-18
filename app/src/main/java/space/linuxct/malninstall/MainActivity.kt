@@ -180,7 +180,9 @@ class MainActivity : AppCompatActivity() {
         val myPackageName = packageName
         val activities: List<ComponentName> = ArrayList()
         val packageManager = packageManager as PackageManager
-        packageManager.getPreferredActivities(filters, activities, null)
+        try {
+            packageManager.getPreferredActivities(filters, activities, null)
+        } catch (_: Exception){ }
 
         if (activities.isEmpty()){
             return isLauncherDefaultFallback()
