@@ -1,18 +1,16 @@
 package space.linuxct.malninstall
 
-import android.content.ComponentName
-import android.content.Intent
-import android.content.IntentFilter
+import android.content.*
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import space.linuxct.malninstall.R.layout.activity_main
 import java.lang.Exception
-
 
 class MainActivity : AppCompatActivity() {
     private lateinit var actionButton: Button
@@ -24,8 +22,10 @@ class MainActivity : AppCompatActivity() {
             "com.redtube.music") //Mad respects PRODAFT, this full list would not have been possible without your report
     private var foundPackages = mutableListOf<String>()
     private var uninstallAttemptCount = 0
+    private lateinit var preferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        preferences = getPreferences(Context.MODE_PRIVATE)
         setContentView(activity_main)
         actionButton = findViewById(R.id.actionButton)
         resultText = findViewById(R.id.resultTextView)
@@ -38,6 +38,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        preferences = getPreferences(Context.MODE_PRIVATE)
+        uninstallAttemptCount = preferences.getInt(uninstallAttemptCountKey, 0)
         if (uninstallAttemptCount == 0) {
             handle()
             return
@@ -47,6 +49,8 @@ class MainActivity : AppCompatActivity() {
             resultText.text = getString(R.string.error_text)
             if (uninstallAttemptCount <= 3){
                 tryUninstall()
+            } else {
+                startAlternativeFlow()
             }
         } else {
             showRemoveDefaultLauncher()
@@ -57,16 +61,25 @@ class MainActivity : AppCompatActivity() {
 
     private fun handle(){
         if (detect()){
-            if (isLauncherDefault()){
-                showBeginUninstall()
-            } else {
-                showSetAsLauncher()
+            when {
+                isInAlternativeFlow() -> {
+                    showAlternativeFlow()
+                }
+                isLauncherDefault() -> {
+                    showBeginUninstall()
+                }
+                else -> {
+                    showSetAsLauncher()
+                }
             }
         } else {
-            if (isLauncherDefault()){
-                showRemoveDefaultLauncher()
-            } else {
-                showNotFound()
+            when {
+                isLauncherDefault() -> {
+                    showRemoveDefaultLauncher()
+                }
+                else -> {
+                    showNotFound()
+                }
             }
         }
     }
@@ -86,6 +99,8 @@ class MainActivity : AppCompatActivity() {
         actionButton.text = getString(R.string.showBeginUninstall_button)
         actionButton.isEnabled = true
         actionButton.setOnClickListener {
+            uninstallAttemptCount = 0
+            preferences.edit().putInt(uninstallAttemptCountKey, 0).apply()
             tryUninstall()
             handle()
         }
@@ -97,6 +112,36 @@ class MainActivity : AppCompatActivity() {
         actionButton.isEnabled = true
         actionButton.setOnClickListener {
             resetPreferredLauncherAndOpenChooser()
+            uninstallAttemptCount = 0
+            preferences.edit()
+                    .putInt(uninstallAttemptCountKey, uninstallAttemptCount)
+                    .putBoolean(isInAlternativeFlowKey, false)
+                    .apply()
+            handle()
+        }
+    }
+
+    private fun startAlternativeFlow(){
+        resultText.text = getString(R.string.alternativeFlowStart_text)
+        actionButton.text = getString(R.string.alternativeFlowStart_button)
+        actionButton.isEnabled = true
+        actionButton.setOnClickListener {
+            resetPreferredLauncherAndOpenChooser()
+            uninstallAttemptCount = 0
+            preferences.edit()
+                    .putInt(uninstallAttemptCountKey, uninstallAttemptCount)
+                    .putBoolean(isInAlternativeFlowKey, true)
+                    .apply()
+            handle()
+        }
+    }
+
+    private fun showAlternativeFlow(){
+        resultText.text = getString(R.string.alternativeFlow_text)
+        actionButton.text = getString(R.string.alternativeFlow_button)
+        actionButton.isEnabled = true
+        actionButton.setOnClickListener {
+            tryUninstall()
             handle()
         }
     }
@@ -107,7 +152,6 @@ class MainActivity : AppCompatActivity() {
         actionButton.isEnabled = false
         actionButton.setOnClickListener {}
     }
-
 
     private fun handleFollowMeClick() {
         try {
@@ -204,6 +248,8 @@ class MainActivity : AppCompatActivity() {
         return currentLauncherName == packageName
     }
 
+    private fun isInAlternativeFlow(): Boolean = preferences.getBoolean(isInAlternativeFlowKey, false)
+
     private fun deviceIsBlacklisted(): Boolean {
         for (device in blacklist){
             if (device == manufacturer){
@@ -232,7 +278,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun tryUninstall(){
-        uninstallAttemptCount = uninstallAttemptCount++
+        uninstallAttemptCount = preferences.getInt(uninstallAttemptCountKey, 1)
+        preferences.edit().putInt(uninstallAttemptCountKey, uninstallAttemptCount+1).apply()
         var reqCodeInc = 0
         for (packageName in packageListMatchInDevice(packNameList)){
             val uri: Uri = Uri.fromParts("package", packageName, null)
@@ -242,9 +289,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private companion object DeviceData {
+    private companion object ExtraData {
         val manufacturer = Build.MANUFACTURER.toString().toLowerCase()
         val blacklist = listOf("huawei", "honor", "vivo", "iqoo" )
+        const val uninstallAttemptCountKey = "uninstallAttemptCount"
+        const val isInAlternativeFlowKey = "isInAlternativeFlow"
     }
 }
 
