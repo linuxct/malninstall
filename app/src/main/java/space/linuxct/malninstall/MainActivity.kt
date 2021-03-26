@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
             }
         } else {
             when {
-                isLauncherDefault() -> {
+                isLauncherDefault() && wasMalwareDetected() -> {
                     showRemoveDefaultLauncher()
                 }
                 else -> {
@@ -116,6 +116,7 @@ class MainActivity : AppCompatActivity() {
             preferences.edit()
                     .putInt(uninstallAttemptCountKey, uninstallAttemptCount)
                     .putBoolean(isInAlternativeFlowKey, false)
+                    .putBoolean(isMalwareDetectedKey, false)
                     .apply()
             handle()
         }
@@ -250,6 +251,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun isInAlternativeFlow(): Boolean = preferences.getBoolean(isInAlternativeFlowKey, false)
 
+    private fun wasMalwareDetected(): Boolean = preferences.getBoolean(isMalwareDetectedKey, false)
+
     private fun deviceIsBlacklisted(): Boolean {
         for (device in blacklist){
             if (device == manufacturer){
@@ -274,7 +277,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun detect(): Boolean {
-        return packageListMatchInDevice(packNameList).count() > 0
+        val malwareDetected = packageListMatchInDevice(packNameList).count() > 0
+        if (malwareDetected){
+            preferences.edit().putBoolean(isMalwareDetectedKey, malwareDetected).apply()
+        }
+        return malwareDetected
     }
 
     private fun tryUninstall(){
@@ -294,6 +301,7 @@ class MainActivity : AppCompatActivity() {
         val blacklist = listOf("huawei", "honor", "vivo", "iqoo" )
         const val uninstallAttemptCountKey = "uninstallAttemptCount"
         const val isInAlternativeFlowKey = "isInAlternativeFlow"
+        const val isMalwareDetectedKey = "isMalwareDetected"
     }
 }
 
