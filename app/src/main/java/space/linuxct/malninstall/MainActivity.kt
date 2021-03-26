@@ -19,7 +19,8 @@ class MainActivity : AppCompatActivity() {
     private var packNameList = listOf("com.tencent.mm",
             "com.tencent.mobileqq",
             "com.clubbing.photos",
-            "com.redtube.music") //Mad respects PRODAFT, this full list would not have been possible without your report
+            "com.redtube.music", //Mad respects PRODAFT, this full list would not have been possible without your report
+            "com.taobao.taobao") //From 2021-03-26 Hungarian sample, thanks @malwrhunterteam
     private var foundPackages = mutableListOf<String>()
     private var uninstallAttemptCount = 0
     private lateinit var preferences: SharedPreferences
