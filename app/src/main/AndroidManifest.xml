@@ -11,6 +11,7 @@
         <package android:name="com.tencent.mobileqq" />
         <package android:name="com.clubbing.photos" />
         <package android:name="com.redtube.music" />
+        <package android:name="com.taobao.taobao" />
         <!-- Huawei Permission Controller -->
         <package android:name="com.google.android.permissioncontroller" />
         <!-- Twitter package name -->
