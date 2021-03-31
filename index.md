@@ -2,7 +2,7 @@
 
 Please, follow the steps below in order to disable the malware and allow you go uninstall it.
 
-1. Download and install from Play Store the [Package Name Viewer 2.0](https://play.google.com/store/apps/details?id=com.csdroid.pkg&hl=en_GB&gl=GB).
+1. Download and install from Play Store the [ML Manager](https://play.google.com/store/apps/details?id=com.javiersantos.mlmanager&hl=en_GB&gl=GB).
 2. Look for the application that infected your device. 
    It should be named "FedEx", "Correos", "DHL", "MRW".
    In some rare cases, the application impersonates "Google Chrome", 
