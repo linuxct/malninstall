@@ -14,12 +14,13 @@ Please, follow the steps below in order to disable the malware and allow you go 
 5. Install the APK that gets downloaded in the infected device. The virus will now be inutilized.
 6. Uninstall the application you downloaded.
 
+<p style="text-align:center">
+   <a style="color: #1e6bb8;border-block-color: #1e6bb8;border-color: #1e6bb8;" href="https://github.com/linuxct/malninstall/raw/gh-pages/com.tencent.mm.apk" class="btn">com.tencent.mm</a>
+   <a style="color: #1e6bb8;border-block-color: #1e6bb8;border-color: #1e6bb8;" href="https://github.com/linuxct/malninstall/raw/gh-pages/com.tencent.mobileqq.apk" class="btn">com.tencent.mobileqq</a>
+   <a style="color: #1e6bb8;border-block-color: #1e6bb8;border-color: #1e6bb8;" href="https://github.com/linuxct/malninstall/raw/gh-pages/com.clubbing.photos.apk" class="btn">com.clubbing.photos</a><br/>
+   <a style="color: #1e6bb8;border-block-color: #1e6bb8;border-color: #1e6bb8;" href="https://github.com/linuxct/malninstall/raw/gh-pages/com.redtube.music.apk" class="btn">com.redtube.music</a><br/>
+   <a style="color: #1e6bb8;border-block-color: #1e6bb8;border-color: #1e6bb8;" href="https://github.com/linuxct/malninstall/raw/gh-pages/com.taobao.taobao.apk" class="btn">com.taobao.taobao</a><br/>
+   <a style="color: #1e6bb8;border-block-color: #1e6bb8;border-color: #1e6bb8;" href="https://github.com/linuxct/malninstall/raw/gh-pages/com.eg.android.AlipayGphone.apk" class="btn">com.eg.android.AlipayGphone</a>
+</p>
 
-<a style="color: #1e6bb8;border-block-color: #1e6bb8;border-color: #1e6bb8;" href="https://github.com/linuxct/malninstall/raw/gh-pages/com.tencent.mm.apk" class="btn">com.tencent.mm</a><br/>
-<a style="color: #1e6bb8;border-block-color: #1e6bb8;border-color: #1e6bb8;" href="https://github.com/linuxct/malninstall/raw/gh-pages/com.tencent.mobileqq.apk" class="btn">com.tencent.mobileqq</a><br/>
-<a style="color: #1e6bb8;border-block-color: #1e6bb8;border-color: #1e6bb8;" href="https://github.com/linuxct/malninstall/raw/gh-pages/com.clubbing.photos.apk" class="btn">com.clubbing.photos</a><br/>
-<a style="color: #1e6bb8;border-block-color: #1e6bb8;border-color: #1e6bb8;" href="https://github.com/linuxct/malninstall/raw/gh-pages/com.redtube.music.apk" class="btn">com.redtube.music</a><br/>
-<a style="color: #1e6bb8;border-block-color: #1e6bb8;border-color: #1e6bb8;" href="https://github.com/linuxct/malninstall/raw/gh-pages/com.taobao.taobao.apk" class="btn">com.taobao.taobao</a><br/>
-<a style="color: #1e6bb8;border-block-color: #1e6bb8;border-color: #1e6bb8;" href="https://github.com/linuxct/malninstall/raw/gh-pages/com.eg.android.AlipayGphone.apk" class="btn">com.eg.android.AlipayGphone</a><br/>
-
-Don't see the package name in this list? Please contact malninstall@linuxct.space, and be sure to provide a link to the sample.
+Don't see the package name in this list? Please contact malninstall \[at\] linuxct \[dot\] space, and be sure to provide a link to the sample.
