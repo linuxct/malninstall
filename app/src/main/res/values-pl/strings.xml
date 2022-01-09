@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Narzędzie usuwania FluBot</string>
+    <string name="showSetAsLauncher_text">Naciśnij na przycisk, aby ustawić to narzędzie jako domyślną aplikację ekranu głównego. Na wszelkie komunikaty wybierz "Zawsze". Ten krok zostanie cofnięty po usunięciu malware.</string>
+    <string name="showSetAsLauncher_button">Ustaw aplikację</string>
+
+    <string name="showBeginUninstall_text">Pamiętaj, że to narzędzie może usunąć aplikację WeChat, jeśli jest ona zainstalowana. Na zapytanie o ustawienie aplikacji ekranu głównego, wybierz "Zawsze" dla Narzędzie usuwania FluBot. Zignoruj komunikaty o błędach i przejdź do usuwania malware naciskając "OK", gdy wymagane.</string>
+    <string name="showBeginUninstall_button">Odinstaluj malware</string>
+
+    <string name="showRemoveDefaultLauncher_text">Naciśnij na przycisk, aby przywrócić swoją aplikację ekranu głównego. Nie wybieraj Narzędzie usuwania FluBot.</string>
+    <string name="showRemoveDefaultLauncher_button">Wybierz aplikację ekranu głównego</string>
+
+    <string name="showNotFound_text">Na Twoim urządzeniu nie znaleziono znanej wersji FluBot</string>
+    <string name="showNotFound_button">Nie znaleziono malware</string>
+
+    <string name="alternativeFlowStart_text">Malware nie zostało jeszcze usunięte. Spróbujmy czegoś innego. Po naciśnięciu na przycisk powyżej ustawisz aplikację ekranu głównego ponownie. Jednak tym razem nie wybieraj \"Zawsze\" i nie zaznaczaj opcji \"Zapamiętaj wybór\".</string>
+    <string name="alternativeFlowStart_button">Przejdź do alternatywnej metody</string>
+
+    <string name="alternativeFlow_text">Świetnie. Po naciśnięciu na przycisk Odinstaluj ustawisz aplikację ekranu głównego ponownie. Tym razem, nie wybieraj żadnej aplikacji i zamknij menu naciskając przycisk Wstecz lub naciskając na dowolne puste miejsce na ekranie. Następnie będziesz mieć możliwość odinstalowania malware naciskając "OK" kilka razy z rzędu, gdy wymagane.</string>
+    <string name="alternativeFlow_button">Odinstaluj alternatywną metodą</string>
+    <string name="alternativeFlow_toast">Teraz naciśnij przycisk Wstecz lub naciśnij na dowolne puste miejsce na ekranie</string>
+
+    <string name="error_text">Coś poszło nie tak</string>
+    <string name="success_text">Usunięto malware</string>
+</resources>
